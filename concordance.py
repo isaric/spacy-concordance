@@ -1,9 +1,11 @@
+import sys
+
 import spacy
 from collections import Counter
 
 nlp = spacy.load("en_core_web_sm", disable=['ner', 'parser', 'tagger'])
 nlp.add_pipe('sentencizer')
-doc = nlp(open("/home/isaric/check.txt").read())
+doc = nlp(open(sys.argv[1]).read())
 
 words_sentence = [(sent_id, token.text.lower()) for sent_id, sent in enumerate(doc.sents) for token in sent if ("\n" not in token.text and not token.is_punct)]
 sentence_map = dict()

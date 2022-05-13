@@ -11,3 +11,8 @@ Example usage:
 
 SpaCy is the only dependency needed to run the script. The version used is written in
 the requirements.txt file located inside the project.
+The english language model needed for spaCy to tokenize the text needs to be installed
+separately. This can be done by executing the following command:
+
+    python -m spacy download en_core_web_sm
+
